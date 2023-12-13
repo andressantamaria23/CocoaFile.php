@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de empleados</title>
+    <link rel="icon" href="../images/Captura.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="REGISTRAREMPLEADO.CSS">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9T...">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="">ADMINISTRADOR</a>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Sesion 
+             </button>
+             <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
+              <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+              </ul>
+             </div>
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CHOCOLATE COLOMBIA</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+           
+                <li class="nav-item">
+                  <a class="nav-link" href="../Empleados/REGISTRAREMPLEADOS.HTML">REGISTRAR EMPLEADOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Cargo/REGISTRARCARGO.HTML">REGISTRAR CARGO</a>
+                </li>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+
+
+
+      <form action="guardar.php" method="post">
+        <h2>Formulario de Empleado</h2>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="NomEmpleado" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="ApellEmpleado" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fecha_nacimiento" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <label for="localidad">Localidad:</label>
+        <input type="text" id="localidad" name="Localidad" required>
+
+        <label for="barrio">Barrio:</label>
+        <input type="text" id="barrio" name="barrio" required>
+
+        <label for="codigoCargo">Código de Cargo:</label>
+        <select class="form-select" id="" name="fkcod_cargo" required>
+          <option selected disabled value="" aria-required="true"></option>
+          <option>1001</option>
+          <option>1002</option>
+          <option>1003</option>
+        </select>
+
+        <label for="codigoContrato">Código de Contrato:</label>
+        <select class="form-select" id="" name="fkcod_contrato" required>
+          <option selected disabled value="" aria-required="true"></option>
+          <option>3001</option>
+          <option>3002</option>
+          <option>3003</option>
+          <option>3004</option>
+          <option>3005</option>
+        </select>
+
+        <br>
+<br>
+        <button type="submit">Guardar</button> 
+        <a type="button" class="btn btn-primary" href="consultar.php">consultar</a>
+    </form>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPh..."></script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+
+.hidden{
+    
+ display: table-cell;
+
+}
+.nav{ 
+
+position: relative;   
+}
+
+table {
+    position: relative;
+    top: 10px;
+  }
+  #myTable_wrapper {
+    margin-top: 10px;
+  }
+
+  #myTable_wrapper .accionesCell {
+    position: sticky;
+    top: 0;
+  }
+  #botones{
+    margin-top: 80px;
+  }

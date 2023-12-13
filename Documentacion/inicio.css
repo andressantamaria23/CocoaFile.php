@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600;800&family=Mulish:wght@200;300;700&display=swap');
+
+
+/* CODIGO NAV*/
+body {
+    margin: 5px;
+    padding: 0;
+}
+.a{
+    color: black;
+}
+
+.navbar {
+    background-color:white; /* Color de fondo de la barra de navegación */
+    
+padding: 10px;  
+display: flex;
+justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.logo img {
+    max-height: 50px; /* Ajusta la altura máxima de la imagen según tus necesidades */
+}
+
+
+/* INICIA LA PRIMERA SECCION*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 5px;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #000000;
+}
+
+footer {
+    background-color: #fcf9f9;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Estilo para el contenedor principal */
+.caracteristicas {
+    padding: 20px;
+    border: 1px solid #8a8888;
+    margin: 20px;
+}
+
+/* Estilo para el contenedor interno */
+.caracter {
+    background-color: #b4abab;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el encabezado h2 */
+.caracter h2 {
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+}
+
+
+header {
+    background-color: #8a8888;
+    text-align: center;
+    padding: 20px;
+}
+
+.workers {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.worker {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.worker img {
+    
+ 
+width: 100%;
+    border-radius: 50%;
+}
+
+.worker h2 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.worker p {
+    color: #555;
+
+
+@media (max-width: 1200px) {
+    .nosotros {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+}
+}
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  footer {
+    background-color: #635d5d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 100px; /* Ajusta el ancho según tus necesidades */
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icons img {
+    width: 30px; /* Ajusta el tamaño según tus necesidades */
+    margin: 0 5px; /* Ajusta el margen entre los iconos según tus necesidades */
+  }

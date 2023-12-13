@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear orden de compra</title>
+    <link rel="stylesheet" href="nuevaordencompra.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../images/Captura.PNG" type="image/x-icon">
+    
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+        <img src="images/Captura.PNG" alt="Logo de la empresa">
+        </div>
+        <div class="profile">
+        <a href="perfilarturo.html">Ver perfil</a> <br>
+        <br>
+        <img src="images/Arturo.jpg" alt="Foto de perfil del usuario">
+        </div>
+        </div>
+    
+    <div class="header">
+        <!-- Botón con icono de ojo -->
+        <button class="icon-button">
+            <i class="fas fa-eye"></i> Ver
+        </button>
+
+        <!-- Botones en el lado derecho -->
+        <div class="right-buttons">
+            <button>Eliminar</button>
+            <button>Crear</button>
+            <button>Actualizar</button>
+           
+        </div>
+    </div>
+    
+        <div class="content">
+            <!-- Formulario de Ordenes de Compra con campos -->
+            <form action="#" method="post"> <!-- Reemplaza # con la URL correcta -->
+                <h2>Nueva Orden de Compra</h2>
+    
+                <!-- Campos del formulario -->
+                <label for="cod_compra">Código de Compra:</label>
+                <input type="text" id="cod_compra" name="cod_compra" required>
+    
+                <label for="cantidad_producto">Cantidad de Producto:</label>
+                <input type="number" id="cantidad_producto" name="cantidad_producto" required>
+    
+                <label for="fecha_compra">Fecha de Compra:</label>
+                <input type="date" id="fecha_compra" name="fecha_compra" required>
+    
+                <label for="cod_campesino">Código de Campesino:</label>
+                <input type="text" id="cod_campesino" name="cod_campesino" required>
+    
+                <label for="cod_documento">Código de Documento:</label>
+                <input type="text" id="cod_documento" name="cod_documento" required>
+    
+                <!-- Botón para enviar el formulario -->
+                <input type="submit" name="crear_orden" value="Crear Orden">
+            </form>
+    
+            <!-- ... Resto del contenido ... -->
+        </div>
+</body>
+</html>

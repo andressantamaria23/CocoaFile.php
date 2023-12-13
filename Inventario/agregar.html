@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9T...">
+    <link rel="stylesheet" href="StylosA.css">
+    <title>Agregar Inventario</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="../Inventario/indexI.php">INVENTARIO</a>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Sesion 
+             </button>
+             <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
+              <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+              </ul>
+             </div>
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CHOCOLATE COLOMBIA</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      INVENTARIO
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="../Entrada/IndexEntrada.html" >ENTRADA</a></li>
+                      <li><a class="dropdown-item" href="../Salida/indexSalida.html">SALIDA</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../campesinos/campesinos.html">CAMPESINOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login.html">ORDEN COMPRA</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid" id="Form">
+      <form action="Agregar.php" method="post" id="Formulario"> 
+          <h2 id="Titulo-Entrada">INVENTARIO</h2>
+
+         
+                <label for="parentesco" class="form-label">Producto</label>
+                <select class="form-select" id="" name="producto" required>
+                    <option selected disabled value="" aria-required="true"></option>
+                    <option>cacao</option>
+                </select>
+            
+
+          <label for="cantidad_producto">Cantidad de Producto:</label>
+          <input type="number" id="cantidad" name="cantidad" required>
+
+          <label for="fecha_Entrada">Fecha de vencimiento:</label>
+          <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" required>
+
+          <label for="cod_campesino">Código campesino:</label>
+          <select class="form-select" id="" name="fkcod_campesino" required>
+            <option selected disabled value="" aria-required="true"></option>
+            <option>800012</option>
+            <option>800013</option>
+            <option>800014</option>
+            <option>800015</option>
+            <option>800016</option>
+          </select>
+
+          <label for="">Código Entrada:</label>
+          <select class="form-select" id="" name="fkcod_entrada" required>
+            <option selected disabled value="" aria-required="true"></option>
+            <option>889001</option>
+            <option>889002</option>
+            <option>889003</option>
+            <option>889004</option>
+            <option>889005</option>
+            <option>889006</option>
+            <option>889007</option>
+            <option>889008</option>
+            <option>889009</option>
+            <option>889010</option>
+            </select>
+
+            <label for="cod_campesino">Código salida:</label>
+            <select class="form-select" id="" name="fkcod_salida" required>
+                <option selected disabled value="" aria-required="true"></option>
+                <option>9001</option>
+                <option>9002</option>
+                <option>9003</option>
+                <option>9004</option>
+                <option>9005</option>
+                <option>9006</option>
+                <option>9007</option>
+                <option>9008</option>
+                <option>9009</option>
+                <option>9010</option>
+                </select>
+          <div class="content" id="botones">
+            <table>
+              <tr>
+                <td>
+                  <div class="col-12">
+                    <input type="submit" value="GUARDAR">
+                  </div>
+                </td>
+                <td>
+                  <div class="col-12">
+                    <input type="button" value="EDITAR">
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+     
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPh..."></script>
+</body>
+</html>

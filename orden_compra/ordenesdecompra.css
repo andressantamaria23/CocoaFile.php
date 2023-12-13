@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo img {
+    height: 60px; /* Ajusta la altura del logo según tus necesidades */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile a {
+    margin-right: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.profile img {
+    border-radius: 100%; /* Añade bordes redondeados a la foto del perfil */
+    height: 30px; /* Ajusta la altura de la foto según tus necesidades */
+}
+
+.header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-buttons {
+    display: flex;
+}
+
+.right-buttons button {
+    margin-left: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para los botones */
+.button {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Borde */
+    border-radius: 5px; /* Radio de borde para esquinas redondeadas */
+    cursor: pointer; /* Cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilo para el botón de ojo */
+.icon-button {
+    background-color: #888e92; /* Color de fondo para el botón con icono */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Borde */
+    border-radius: 5px; /* Radio de borde para esquinas redondeadas */
+    cursor: pointer; /* Cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente */
+    display: flex; /* Hacer que los elementos dentro del botón se alineen en fila */
+    align-items: center; /* Alinear elementos verticalmente en el centro */
+}
+
+/* Estilo para los botones en el lado derecho */
+.right-buttons button {
+    background-color: #888e92; /* Color de fondo para los botones en el lado derecho */
+    color: rgb(255, 255, 255); /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Borde */
+    border-radius: 5px; /* Radio de borde para esquinas redondeadas */
+    cursor: pointer; /* Cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-left: 10px; /* Margen a la izquierda para separar los botones */
+}
+

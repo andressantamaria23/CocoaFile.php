@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo img {
+    height: 60px; /* Ajusta la altura del logo según tus necesidades */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile a {
+    margin-right: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.profile img {
+    border-radius: 100%; /* Añade bordes redondeados a la foto del perfil */
+    height: 30px; /* Ajusta la altura de la foto según tus necesidades */
+}
+
+.perfil-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+}
+
+.perfil-info img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.datos-personales {
+    text-align: left;
+}
+
+.editar-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.editar-btn:hover {
+    background-color: #0056b3;
+}
+
+.perfil-editar {
+    display: none;
+    margin-top: 20px;
+}
+
+.perfil-editar form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guardar-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.guardar-btn:hover {
+    background-color: #218838;
+}
