@@ -52,3 +52,26 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+.hidden{
+    
+    display: table-cell;
+   
+   }
+   .nav{ 
+   
+   position: relative;   
+   }
+   
+   
+     #myTable_wrapper {
+       margin-top: 20px;
+     }
+   
+     #myTable_wrapper .accionesCell {
+       position: sticky;
+       top: 20px;
+     }
+     #botones{
+       margin-top: 80px;
+     }

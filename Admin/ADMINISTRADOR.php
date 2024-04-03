@@ -9,19 +9,25 @@
     <link rel="icon" href="../images/Captura.PNG" type="image/x-icon">
 </head>
 <body>
+  <?php
+
+
+
+
+  ?>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="">ADMINISTRADOR</a>
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Sesion 
+             </button>
+              <a class="navbar-brand" href="">ADMINISTRADOR</a>
+               <div class="btn-group" role="group">
+              <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Sesion 
              </button>
              <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
-              <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+             <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
+              <li><a class="dropdown-item" href="../cerrarsesion.php">Cerrar sesion</a></li>
               </ul>
              </div>
           <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">

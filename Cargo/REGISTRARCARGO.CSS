@@ -11,6 +11,9 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position:relative;
+    top: 80px;
+    margin-top: 10px;
 }
 
 label {
@@ -37,3 +40,19 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+
+.hidden{
+    
+    display: table-cell;
+   
+   }
+   .nav{ 
+   
+   position: relative;   
+   }
+   
+     #botones{
+       margin-top: 80px;
+     }

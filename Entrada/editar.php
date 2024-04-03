@@ -56,8 +56,8 @@ if(isset($_POST['enviar'])){
                 Sesion
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
-                <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+                <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
+                <li><a class="dropdown-item" href="../cerrarsesion.php">Cerrar sesion</a></li>
             </ul>
         </div>
         <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -80,7 +80,7 @@ if(isset($_POST['enviar'])){
                         <a class="nav-link" href="../campesinos/campesinos.html">CAMPESINOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../login.html">ORDEN COMPRA</a>
+                        <a class="nav-link" href="../orden_compra/consultar.php">ORDEN COMPRA</a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,11 @@ if(isset($_POST['enviar'])){
     </div>
 </nav>
 <div class="content" id="Form">
-    <form action="agregar.php" method="post" id="Formulario"> 
+    <form action="<?=$_SERVER['PHP_SELF']?>" method="post" id="Formulario"> 
+
+  
+  
+
         <h2 id="Titulo-Entrada">ACTUALIZAR ENTRADA</h2>
 
         <label for="cantidad_producto">Cantidad de Producto:</label>
@@ -110,19 +114,25 @@ if(isset($_POST['enviar'])){
                     </td>
                     <td>
                         <div class="col-12">
-                            <input type="button" value="EDITAR" >
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-12">
                             <a type="button" class="btn btn-primary" href="consultar.php">Consultar</a>
                         </div>
                     </td>
                 </tr>
             </table>
         </div>
+        
     </form>
+    
+
 </div>
+
+
+<button onclick="goBack()"  class="btn btn-secondary btn-md" >Volver</button>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPh..."></script>
 </body>
 </html>

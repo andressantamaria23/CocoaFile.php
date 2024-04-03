@@ -1,18 +1,34 @@
+<?php
+
+require "../conexion.php";
+
+
+
+
+
+if ($conectar->connect_error) {
+    die("Conexión fallida: " . $conectar->connect_error);
+}
+
+$sql = "SELECT * FROM documentos";
+$result = $conectar->query($sql);
+
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Capacitación</title>
-    <link rel="stylesheet" href="nuevacapacitacion.css">
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+    <title>Documentación</title>
+    <link rel="stylesheet" href="documentacion.css">
     <link rel="icon" href="../images/Captura.PNG" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    
+    <script src="documentacion.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -20,7 +36,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="../Documentacion/documentacion.html">DOCUMENTACIÓN</a>
+          <a class="navbar-brand" href="documentacion.php">DOCUMENTACIÓN</a>
           
           <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
@@ -62,7 +78,7 @@
                     <a class="nav-link" href="../Perfil/perfilarturo.html">Ver Perfil</a>
                   </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../login.html">Cerrar sesión</a>
+                    <a class="nav-link" href="../cerrarsesion.php">Cerrar sesión</a>
                   </li>
 
               </ul>
@@ -70,37 +86,44 @@
           </div>
         </div>
       </nav>
-    
-<div class="header">
-       
-<div class="right-buttons">
-<button>Eliminar</button>
-<button>Crear</button>
-<button>Actualizar</button>
-</div>
-</div>
-    
-<div class="content">
-<form action="#" method="post"> 
-<h2>Nueva Capacitación</h2>
-<label for="cod_compra">Numero de referencia:</label>
-<input type="text" id="N_referencia" name="N_referencia" required>
-    
-<label for="cantidad_producto">Hora Capacitación:</label>
-<input type="number" id="hora_cap" name="hora_cap" required>
-    
-<label for="fecha_compra">Fecha de Capacitacion:</label>
-<input type="date" id="fecha_capacitacion" name="fecha_capacitacion" required>
-    
-<label for="cod_campesino">Tipo de Capacitacion:</label>
-<input type="text" id="tipo_Capacitacion" name="tipo_Capacitacion" required>
-    
-<label for="cod_documento">Código de Documento:</label>
-<input type="text" id="fkcod_documento" name="fkcod_documento" required>
-    <br>
-    <br>
-<input type="submit" name="crear_capac" value="Crear Capacitación">
-</form>
-</div>
+      <br> 
+      <br>
+      <br>
+      <button type="button" class="btn btn-outline-success" id="crearDocumento">CREAR DOCUMENTO</button>
+    <script>
+        document.getElementById("crearDocumento").addEventListener("click", function() {
+            window.location.href = "nuevodocumento.html";
+        });
+    </script>
+    <hr>
+      <table class="table text-center justify-content-center align-items-center" id="myTable">
+        <thead>
+        <tr>
+        <th>CÓDIGO DOCUMENTO</th>
+        <td> TIPO DOCUMENTO</td>
+        <td>VERSIÓN</td>
+        <td>ARCHIVO</td>
+        </tr>
+        </thead>
+
+<tbody>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<th>" . $row["cod_documento"] . "</th>";
+                    echo "<td>" . $row["tipo_documento"] . "</td>";
+                    echo "<td>" . $row["version"] . "</td>";
+                    echo "<td>" . $row["archivo"] . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='6'>No hay capacitaciones disponibles.</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+
+
 </body>
 </html>

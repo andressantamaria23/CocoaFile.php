@@ -14,7 +14,7 @@ VALUES('$producto','$cantidad','$fecha_vencimiento','$fkcod_campesino','$fkcod_e
 $query = mysqli_query($conectar,$insert);
 
 if($query){
-
+ 
     echo '<script>alert("Se almacenaron los datos correctamente");
         location.assign("indexI.php");
     </script>';

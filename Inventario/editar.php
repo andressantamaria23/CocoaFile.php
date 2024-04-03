@@ -35,9 +35,13 @@ require "../conexion.php";
             $resultado=mysqli_query($conectar,$sql);
 
             if($resultado){
-                echo '<script>alert("Se actualizaron los datos correctamente");</script>';
+                echo '<script>alert("Se actualizaron los datos correctamente");
+                location.assign("IndexI.php");
+                </script>';
             }else{
-            echo '<script>alert("Error al conectarse a la BD");</script>';
+            echo '<script>alert("Error al conectarse a la BD");
+            location.assign("agregar.html");
+            </script>';
             }
             mysqli_close($conectar);
         
@@ -72,7 +76,7 @@ require "../conexion.php";
               Sesion 
              </button>
              <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
+             <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
               <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
               </ul>
              </div>
@@ -105,13 +109,30 @@ require "../conexion.php";
       </nav>
       <div class="container-sm" id="Form">
       <form action="<?=$_SERVER['PHP_SELF']?>" method="post" id="Formulario"> 
-          <h2 id="Titulo-Entrada">ACTUALIZAR INVENTARIO</h2>
-
-         
+          
+          <label for="parentesco" class="form-label">Producto</label>
+            <select class="form-select" id="" name="" >
+                <option selected disabled value="" ></option>
+                <option>cacao</option>
+            </select>
+            <label for="parentesco" class="form-label">Producto</label>
+            <select class="form-select" id="" name="" >
+                <option selected disabled value="" ></option>
+                <option>cacao</option>
+            </select>
+            <label for="parentesco" class="form-label">Producto</label>
+              <select class="form-select" id="" name="" >
+                  <option selected disabled value="" ></option>
+                  <option>cacao</option>
+              </select>
+              <br>
+              <br>
+              <h2 id="Titulo-Entrada">ACTUALIZAR INVENTARIO</h2>
+              
                 <label for="parentesco" class="form-label">Producto</label>
                 <select class="form-select" id="" name="producto" required>
                     <option selected disabled value="" aria-required="true"></option>
-                    <option>cacao</option>
+                    <option value="cacao" <?php if ($producto === "cacao") echo 'selected'; ?>>cacao</option>
                 </select>
             
 
@@ -120,15 +141,40 @@ require "../conexion.php";
 
           <label for="fecha_Entrada">Fecha de vencimiento:</label>
           <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" value="<?php echo $fecha_vencimiento; ?>" required>
-
           <label for="cod_campesino">Código campesino:</label>
-          <input type="text" name="fkcod_campesino" value="<?php echo $fkcod_campesino; ?>">
+                <select class="form-select" id="cod_campesino" name="fkcod_campesino" required>
+                  <option selected disabled value="" aria-required="true"></option>
+                  <option value="800012" <?php if ($fkcod_campesino === "800012") echo 'selected'; ?>>800012</option>
+                  <option value="800013" <?php if ($fkcod_campesino === "800013") echo 'selected'; ?>>800013</option>
+                  <option value="800014" <?php if ($fkcod_campesino === "800014") echo 'selected'; ?>>800014</option>
+                  <option value="800015" <?php if ($fkcod_campesino === "800015") echo 'selected'; ?>>800015</option>
+                  <option value="800016" <?php if ($fkcod_campesino === "800016") echo 'selected'; ?>>800016</option>
+                </select>
 
-          <label for="">Código Entrada:</label>
-        <input type="text" name="fkcod_entrada" value="<?php echo $fkcod_entrada; ?>">
+                <label for="cod_entrada">Código Entrada:</label>
+                <select class="form-select" id="cod_entrada" name="fkcod_entrada" required>
+                  <option selected disabled value="" aria-required="true"></option>
+                  <option value="889001" <?php if ($fkcod_entrada === "889001") echo 'selected'; ?>>889001</option>
+                  <option value="889002" <?php if ($fkcod_entrada === "889002") echo 'selected'; ?>>889002</option>
+                  <option value="889003" <?php if ($fkcod_entrada === "889003") echo 'selected'; ?>>889003</option>
+                  <option value="889004" <?php if ($fkcod_entrada === "889004") echo 'selected'; ?>>889004</option>
+                  <option value="889005" <?php if ($fkcod_entrada === "889005") echo 'selected'; ?>>889005</option>
 
-            <label for="cod_salida">Código salida:</label>
-            <input type="text" name="fkcod_salida" value="<?php echo $fkcod_salida; ?>">
+                </select>
+
+                <label for="cod_salida">Código salida:</label>
+                <select class="form-select" id="cod_salida" name="fkcod_salida" required>
+                  <option selected disabled value="" aria-required="true"></option>
+                  <option value="9001" <?php if ($fkcod_salida === "9001") echo 'selected'; ?>>9001</option>
+                  <option value="9002" <?php if ($fkcod_salida === "9002") echo 'selected'; ?>>9002</option>
+                  <option value="9003" <?php if ($fkcod_salida === "9003") echo 'selected'; ?>>9003</option>
+                  <option value="9004" <?php if ($fkcod_salida === "9004") echo 'selected'; ?>>9004</option>
+                  <option value="9005" <?php if ($fkcod_salida === "9005") echo 'selected'; ?>>9005</option>
+
+                </select>
+
+
+
 
             <input type="hidden" value="<?php echo$cod_inventario; ?>" name="cod_inventario">
 
@@ -139,11 +185,10 @@ require "../conexion.php";
                   <div class="col-12">
                     <input type="submit" value="ACTUALIZAR" name="enviar">
                   </div>
+                  <button onclick="goBack()"  class="btn btn-secondary btn-md" >Volver</button>
+
                 </td>
                 <td>
-                  <div class="col-12">
-                    <input type="button" value="EDITAR">
-                  </div>
                 </td>
               </tr>
             </table>
@@ -151,6 +196,12 @@ require "../conexion.php";
      
       </form>
     </div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPh..."></script>
 </body>
 </html>

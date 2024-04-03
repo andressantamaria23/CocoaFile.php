@@ -39,8 +39,8 @@
             Sesion 
            </button>
            <ul class="dropdown-menu">
-           <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
-            <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+           <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
+            <li><a class="dropdown-item" href="../cerrarsesion.php">Cerrar sesion</a></li>
             </ul>
            </div>
             <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -112,9 +112,41 @@
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#myTable').DataTable();
-    });
+        var table = $('#myTable').DataTable({
+            orderCellsTop: true,
+            fixedHeader: true,
+            select: true 
+        });
 
+        
+        $('#myTable thead tr').clone(true).appendTo('#myTable thead');
+        $('#myTable thead tr:eq(1) th').each(function(i) {
+            var title = $(this).text(); 
+            $(this).html('<input type="text" placeholder="Search...' + title + '" />');
+
+          
+            if (i === 1 || i === 5) {
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(this).empty())
+                    .on('change', function() {
+                        table.column(i).search($(this).val()).draw();
+                    });
+
+                
+                table.column(i).data().unique().sort().each(function(d) {
+                    select.append('<option value="' + d + '">' + d + '</option>');
+                });
+            }
+        });
+
+        
+        $('#myTable thead input').on('keyup change', function() {
+            table
+                .column($(this).parent().index() + ':visible')
+                .search(this.value)
+                .draw();
+        });
+    });
 </script>
 
 </body>

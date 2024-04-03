@@ -1,89 +1,26 @@
-body {
-    margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-}
-
-.logo img {
-    height: 60px; /* Ajusta la altura del logo según tus necesidades */
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-}
-
-.profile a {
-    margin-right: 10px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.profile img {
-    border-radius: 100%; /* Añade bordes redondeados a la foto del perfil */
-    height: 30px; /* Ajusta la altura de la foto según tus necesidades */
-}
-
-.actions a {
-    margin-right: 40px;
-    color: #000000;
-    text-decoration: none;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border: 10px #000000;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.contratos-box {
-    display: flex;
-    justify-content: space-around;
-}
-
-.contrato {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    width: 300px;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.contrato h3 {
-    color: #333;
-}
-
-.contrato img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.contrato p {
-    color: #555;
-}
-
-.Ver {
-    background-color: #0a0a0a; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    padding: 10px 15px; /* Ajusta el padding según sea necesario */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.Ver:hover {
-    background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
-}
+.hidden{
+    
+    display: table-cell;
+   
+   }
+   .nav{ 
+   
+   position: relative;   
+   }
+   
+   table {
+       position: relative;
+       top: 10px;
+     }
+     #myTable_wrapper {
+       margin-top: 10px;
+     }
+   
+     #myTable_wrapper .accionesCell {
+       position: sticky;
+       top: 0;
+     }
+     #botones{
+       margin-top: 80px;
+     }

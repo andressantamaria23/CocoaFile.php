@@ -13,10 +13,15 @@ $query = mysqli_query($conectar,$insert);
 
 if($query){
 
-    echo '<script>alert("Se almacenaron los datos correctamente");</script>';
+    echo '<script>alert("Se almacenaron los datos correctamente");
+    
+    location.assign("consultar.php");
+    </script>';
 
 }else{
-    echo '<script>alert("Error al conectarse a la BD");</script>';
+    echo '<script>alert("Error al conectarse a la BD");
+    location.assign("campesinos.html");
+    </script>';
 }
 
 ?>

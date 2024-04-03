@@ -13,7 +13,7 @@ body {
 }
 
 .logo img {
-    height: 60px; /* Ajusta la altura del logo según tus necesidades */
+    height: 60px; 
 }
 
 .profile {
@@ -28,8 +28,8 @@ body {
 }
 
 .profile img {
-    border-radius: 100%; /* Añade bordes redondeados a la foto del perfil */
-    height: 30px; /* Ajusta la altura de la foto según tus necesidades */
+    border-radius: 100%; 
+    height: 30px;
 }
 
 .right-buttons {
@@ -49,40 +49,36 @@ body {
     align-items: center;
 }
 
-/* Estilo para los botones */
 .button {
-    background-color: #4CAF50; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Borde */
-    border-radius: 5px; /* Radio de borde para esquinas redondeadas */
-    cursor: pointer; /* Cursor al pasar por encima */
-    font-size: 16px; /* Tamaño de fuente */
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
 }
-
-/* Estilo para el botón de ojo */
 .icon-button {
-    background-color: #888e92; /* Color de fondo para el botón con icono */
-    color: white; /* Color del texto */
-    padding: 10px; /* Espaciado interno */
-    border: none; /* Borde */
-    border-radius: 5px; /* Radio de borde para esquinas redondeadas */
-    cursor: pointer; /* Cursor al pasar por encima */
-    font-size: 16px; /* Tamaño de fuente */
-    display: flex; /* Hacer que los elementos dentro del botón se alineen en fila */
-    align-items: center; /* Alinear elementos verticalmente en el centro */
+    background-color: #888e92; 
+    color: white; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    display: flex; 
+    align-items: center; 
 }
 
-/* Estilo para los botones en el lado derecho */
 .right-buttons button {
-    background-color: #888e92; /* Color de fondo para los botones en el lado derecho */
-    color: rgb(255, 255, 255); /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Borde */
-    border-radius: 5px; /* Radio de borde para esquinas redondeadas */
-    cursor: pointer; /* Cursor al pasar por encima */
-    font-size: 16px; /* Tamaño de fuente */
-    margin-left: 10px; /* Margen a la izquierda para separar los botones */
+    background-color: #888e92; 
+    color: rgb(255, 255, 255); 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    margin-left: 10px; 
 }
 
 

@@ -9,18 +9,26 @@ if (isset($_POST['enviar'])) {
     $barrio = $_POST['barrio'];
     $fecha_nacimiento = $_POST['fecha_nacimiento'];
     $direccion = $_POST['direccion'];
+    $email = $_POST['email'];
+    $contraseña = $_POST['contraseña'];
     $fkcod_cargo = $_POST['fkcod_cargo'];
     $fkcod_contrato = $_POST['fkcod_contrato'];
 
-    $sql = "UPDATE empleado SET NomEmpleado='" . $NomEmpleado . "', ApellEmpleado='" . $ApellEmpleado .
+    $sql = "UPDATE empleado SET IdEmpleado='".$IdEmpleado."', NomEmpleado='" . $NomEmpleado . "', ApellEmpleado='" . $ApellEmpleado .
         "', Localidad='" . $Localidad . "', barrio='" . $barrio . "', fecha_nacimiento='" . $fecha_nacimiento .
-        "', direccion='" . $direccion . "', fkcod_Cargo='" . $fkcod_cargo . "', fkcod_contrato='" . $fkcod_contrato . "' WHERE IdEmpleado='" . $IdEmpleado . "'";
+        "', direccion='" . $direccion . "', email='" . $email . "', contraseña='" . $contraseña .
+        "', fkcod_cargo='" . $fkcod_cargo . "', fkcod_contrato='" . $fkcod_contrato .
+         "' WHERE IdEmpleado='" . $IdEmpleado . "'";
     $resultado = mysqli_query($conectar, $sql);
 
     if ($resultado) {
-        echo '<script>alert("Se actualizaron los datos correctamente");</script>';
+        echo '<script>alert("Se actualizaron los datos correctamente");
+        location.assign("consultar.php");
+        </script>';
     } else {
-        echo '<script>alert("Error al actualizar los datos");</script>';
+        echo '<script>alert("Error al actualizar los datos");
+        location.assign("editar.php");
+        </script>';
     }
 
     mysqli_close($conectar);
@@ -37,7 +45,9 @@ if (isset($_POST['enviar'])) {
         $barrio = $fila['barrio'];
         $fecha_nacimiento = $fila['fecha_nacimiento'];
         $direccion = $fila['direccion'];
-        $fkcod_cargo = $fila['fkcod_Cargo'];
+        $email = $fila['email'];
+        $contraseña = $fila['contraseña'];
+        $fkcod_cargo = $fila['fkcod_cargo'];
         $fkcod_contrato = $fila['fkcod_contrato'];
     } else {
         echo '<script>alert("Error al obtener los datos");</script>';
@@ -48,7 +58,7 @@ if (isset($_POST['enviar'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,7 +83,7 @@ if (isset($_POST['enviar'])) {
                 Sesion
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
+                <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
                 <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
             </ul>
         </div>
@@ -96,10 +106,11 @@ if (isset($_POST['enviar'])) {
         </div>
     </div>
 </nav>
-
+<br>
+<br>
 <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
     <h2>Formulario de Empleado</h2>
-
+    <input type="hidden" id="" name="IdEmpleado" value="<?php echo $IdEmpleado; ?>" >
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="NomEmpleado" value="<?php echo $NomEmpleado; ?>" required>
 
@@ -119,11 +130,12 @@ if (isset($_POST['enviar'])) {
     <input type="text" id="barrio" name="barrio" value="<?php echo $barrio; ?>" required>
 
     <label for="codigoCargo">Código de Cargo:</label>
-    <select class="form-select" id="" name="fkcod_cargo" required>
+    <select class="form-select" id="codigoCargo" name="fkcod_cargo" required>
         <option selected disabled value="" aria-required="true"></option>
         <option <?php echo ($fkcod_cargo === '1001') ? 'selected' : ''; ?>>1001</option>
         <option <?php echo ($fkcod_cargo === '1002') ? 'selected' : ''; ?>>1002</option>
         <option <?php echo ($fkcod_cargo === '1003') ? 'selected' : ''; ?>>1003</option>
+
     </select>
 
     <label for="codigoContrato">Código de Contrato:</label>
@@ -136,9 +148,15 @@ if (isset($_POST['enviar'])) {
         <option <?php echo ($fkcod_contrato === '3005') ? 'selected' : ''; ?>>3005</option>
     </select>
 
+    <label for="nombre">email:</label>
+    <input type="text" id="nombre" name="email" value="<?php echo $email; ?>" required>
+
+    <label for="nombre">contraseña:</label>
+    <input type="text" id="nombre" name="contraseña" value="<?php echo $contraseña; ?>" required>
+
     <br>
     <br>
-    <input type="submit" class="btn btn-primary" name="enviar" value="ACTUALIZAR">
+    <input type="submit" class="btn btn-primary" name="enviar" value="ACTUALIZAR" >
     <a type="button" class="btn btn-primary" href="consultar.php">consultar</a>
 </form>
 
@@ -147,3 +165,4 @@ if (isset($_POST['enviar'])) {
 
 </body>
 </html>
+

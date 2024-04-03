@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600;800&family=Mulish:wght@200;300;700&display=swap');
 
-
-/* CODIGO NAV*/
 body {
     margin: 5px;
     padding: 0;
@@ -11,7 +9,7 @@ body {
 }
 
 .navbar {
-    background-color:white; /* Color de fondo de la barra de navegación */
+    background-color:white; 
     
 padding: 10px;  
 display: flex;
@@ -29,11 +27,9 @@ justify-content: space-between;
 }
 
 .logo img {
-    max-height: 50px; /* Ajusta la altura máxima de la imagen según tus necesidades */
+    max-height: 50px; 
 }
 
-
-/* INICIA LA PRIMERA SECCION*/
 body {
     font-family: Arial, sans-serif;
     margin: 5px;
@@ -50,21 +46,18 @@ footer {
 }
 
 
-/* Estilo para el contenedor principal */
 .caracteristicas {
     padding: 20px;
     border: 1px solid #8a8888;
     margin: 20px;
 }
 
-/* Estilo para el contenedor interno */
 .caracter {
     background-color: #b4abab;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-/* Estilo para el encabezado h2 */
 .caracter h2 {
     color: #333;
     font-size: 18px;
@@ -134,7 +127,7 @@ body {
   }
 
   .logo {
-    max-width: 100px; /* Ajusta el ancho según tus necesidades */
+    max-width: 100px;
   }
 
   .social-icons {
@@ -144,6 +137,6 @@ body {
   }
 
   .social-icons img {
-    width: 30px; /* Ajusta el tamaño según tus necesidades */
-    margin: 0 5px; /* Ajusta el margen entre los iconos según tus necesidades */
+    width: 30px; 
+    margin: 0 5px; 
   }

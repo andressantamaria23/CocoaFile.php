@@ -33,15 +33,14 @@
     <span class="navbar-toggler-icon"></span>
 </button>
           
-          
           <a class="navbar-brand" href="../inventario/indexI.php">INVENTARIO</a>
           <div class="btn-group" role="group">
           <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             Sesion 
            </button>
            <ul class="dropdown-menu">
-           <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
-            <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+           <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
+            <li><a class="dropdown-item" href="../cerrarsesion.html">Cerrar sesion</a></li>
             </ul>
            </div>
             <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -104,14 +103,54 @@
               </tbody>
           </table>
 </div>
+
+
+<button onclick="goBack()"  class="btn btn-secondary btn-lg" >Volver</button>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#myTable').DataTable();
-    });
+        var table = $('#myTable').DataTable({
+            orderCellsTop: true,
+            fixedHeader: true,
+            select: true 
+        });
 
+      
+        $('#myTable thead tr').clone(true).appendTo('#myTable thead');
+        $('#myTable thead tr:eq(1) th').each(function(i) {
+            var title = $(this).text(); 
+            $(this).html('<input type="text" placeholder="Search...' + title + '" />');
+
+            
+            if (i === 1 || i === 5) {
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(this).empty())
+                    .on('change', function() {
+                        table.column(i).search($(this).val()).draw();
+                    });
+
+                
+                table.column(i).data().unique().sort().each(function(d) {
+                    select.append('<option value="' + d + '">' + d + '</option>');
+                });
+            }
+        });
+
+      
+        $('#myTable thead input').on('keyup change', function() {
+            table
+                .column($(this).parent().index() + ':visible')
+                .search(this.value)
+                .draw();
+        });
+    });
 </script>
 
 </body>

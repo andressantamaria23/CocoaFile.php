@@ -27,7 +27,7 @@ if(isset($_POST['enviar'])){
         </script>';
     }else{
         echo '<script>alert("Error al conectarse a la BD");
-        location.assign("indexSalida.html");
+        location.assign("editar.php");
         </script>';
     }
     mysqli_close($conectar);
@@ -53,8 +53,8 @@ if(isset($_POST['enviar'])){
               Sesion 
              </button>
              <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
-              <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+             <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
+              <li><a class="dropdown-item" href="../cerrarsesion.php">Cerrar sesion</a></li>
               </ul>
              </div>
           <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -77,7 +77,7 @@ if(isset($_POST['enviar'])){
                   <a class="nav-link" href="../campesinos/campesinos.html">CAMPESINOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../login.html">ORDEN COMPRA</a>
+                    <a class="nav-link" href="../orden_compra/consultar.php">ORDEN COMPRA</a>
                 </li>
               </ul>
             </div>
@@ -85,10 +85,10 @@ if(isset($_POST['enviar'])){
         </div>
       </nav>
       <div class="content">
-      <form action="Prueba.php" method="post"> 
+      <form action="<?=$_SERVER['PHP_SELF']?>" method="post"> 
           <h2>SALIDA DE PRODUCTOS</h2>
 
-         
+         <input type="hidden" name="cod_salida" value="<?php echo $cod_salida; ?>" >
          
 
           <label for="cantidad_producto">Cantidad de Producto:</label>

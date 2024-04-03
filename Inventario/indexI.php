@@ -41,7 +41,7 @@
             Sesion 
            </button>
            <ul class="dropdown-menu">
-           <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
+           <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
             <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
             </ul>
            </div>
@@ -77,9 +77,9 @@
         <div class="container mt-4" id="container">
 
         <div class="d-flex justify-content-end mb-2" id="botones">
-        <button type="button" class="btn btn-secondary" onclick="editarFila()">Editar</button>
+        
             <a type="button" class="btn btn-primary" href="agregar.html">Agregar</a>
-            <button type="button" class="btn btn-danger">Eliminar</button>
+          
         </div>
                      
                      <table class="table" id="myTable">
@@ -120,9 +120,41 @@
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#myTable').DataTable();
-    });
+        var table = $('#myTable').DataTable({
+            orderCellsTop: true,
+            fixedHeader: true,
+            select: true // Habilita la extensión Select
+        });
 
+        // Agrega listas desplegables al encabezado de la tabla
+        $('#myTable thead tr').clone(true).appendTo('#myTable thead');
+        $('#myTable thead tr:eq(1) th').each(function(i) {
+            var title = $(this).text(); // Es el nombre de la columna
+            $(this).html('<input type="text" placeholder="Search...' + title + '" />');
+
+            // Agrega las listas desplegables solo a las columnas deseadas
+            if (i === 1 || i === 5) {
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(this).empty())
+                    .on('change', function() {
+                        table.column(i).search($(this).val()).draw();
+                    });
+
+                // Obtiene los valores únicos de la columna y los agrega a la lista desplegable
+                table.column(i).data().unique().sort().each(function(d) {
+                    select.append('<option value="' + d + '">' + d + '</option>');
+                });
+            }
+        });
+
+        // Agrega la funcionalidad de búsqueda a las entradas de texto
+        $('#myTable thead input').on('keyup change', function() {
+            table
+                .column($(this).parent().index() + ':visible')
+                .search(this.value)
+                .draw();
+        });
+    });
 </script>
 
 </body>

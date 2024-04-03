@@ -12,9 +12,51 @@ body {
     color: #fff;
 }
 
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+
+.dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: rgb(121, 161, 194);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #000000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 .logo img {
     height: 60px; 
 }
+
 .profile {
     display: flex;
     align-items: center;
@@ -57,34 +99,34 @@ body {
 }
 
 .button {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white; 
     padding: 10px 20px; 
-    border: none;
+    border: none; 
     border-radius: 5px; 
     cursor: pointer; 
     font-size: 16px; 
 }
 
 .icon-button {
-    background-color: #888e92; 
-    color: white;
+    background-color: #888e92;
+    color: white; 
     padding: 10px; 
     border: none; 
     border-radius: 5px; 
     cursor: pointer; 
-    font-size: 16px;
-    display: flex;
+    font-size: 16px; 
+    display: flex; 
     align-items: center; 
 }
 
 .right-buttons button {
-    background-color: #888e92;
+    background-color: #888e92; 
     color: rgb(255, 255, 255); 
-    padding: 10px 20px;
-    border: none;
+    padding: 10px 20px; 
+    border: none; 
     border-radius: 5px; 
-    cursor: pointer;
+    cursor: pointer; 
     font-size: 16px; 
     margin-left: 10px; 
 }

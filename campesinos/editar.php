@@ -21,7 +21,7 @@ if(isset($_POST['enviar'])){
     $nombre_proveedor = $_POST['nombre_proveedor'];
     $telefono_proveedor = $_POST['telefono_proveedor'];
     $fkcod_contrato_comercial = $_POST['fkcod_contrato_comercial'];
-    $sql = "UPDATE campesinos SET condigo_postal='" . $codigo_postal . "', nombre_proveedor='" . $nombre_proveedor . "', nombre_telefono='" . $nombre_telefono .  "', fkcod_contrato_comercial='" . $fkcod_contrato_comercial . "' WHERE cod_campesino='" . $cod_campesino . "'";
+    $sql = "UPDATE campesinos SET codigo_postal='" . $codigo_postal . "', nombre_proveedor='" . $nombre_proveedor . "', telefono_proveedor='" . $telefono_proveedor .  "', fkcod_contrato_comercial='" . $fkcod_contrato_comercial . "' WHERE cod_campesino='" . $cod_campesino . "'";
     $resultado = mysqli_query($conectar, $sql);
     if($resultado){
         echo '<script>alert("Se actualizaron los datos correctamente");
@@ -59,8 +59,8 @@ if(isset($_POST['enviar'])){
               Sesion 
              </button>
              <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
-              <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+             <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
+              <li><a class="dropdown-item" href="../cerrarsesion.php">Cerrar sesion</a></li>
               </ul>
              </div>
           <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -83,7 +83,7 @@ if(isset($_POST['enviar'])){
                   <a class="nav-link" href="campesinos.html">CAMPESINOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">ORDEN COMPRA</a>
+                    <a class="nav-link" href="../orden_compra/consultar.php">ORDEN COMPRA</a>
                   </li>
                 </li>
               </ul>
@@ -93,8 +93,9 @@ if(isset($_POST['enviar'])){
       </nav>
 
         <div class="container-fluid">
-            <form action="agregar.php" method="post"> 
+            <form action="<?=$_SERVER['PHP_SELF']?>" method="post"> 
                 <h2>CAMPESINOS</h2>
+                <input type="hidden" name="cod_campesino" value="<?php echo $cod_campesino;?>">
                <label for="#">Codigo postal: </label>
                 <input type="text" id="cod_salida" name="codigo_postal" value="<?php echo $codigo_postal; ?>" required>
                 <label for="">Nombre Proveedor:</label>
@@ -114,6 +115,15 @@ if(isset($_POST['enviar'])){
                 <a type="button" class="btn btn-primary" href="consultar.php">consultar</a>
             </form>
           </div>
+
+
+          <button onclick="goBack()"  class="btn btn-secondary btn-md" >Volver</button>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 

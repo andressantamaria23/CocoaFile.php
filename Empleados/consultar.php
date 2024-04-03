@@ -37,8 +37,8 @@
           Sesion 
          </button>
          <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="../Perfil/perfilarturo.html">Perfil</a></li>
-          <li><a class="dropdown-item" href="../login.html">Cerrar sesion</a></li>
+         <li><a class="dropdown-item" href="../Perfil/perfilarturo.php">Perfil</a></li>
+          <li><a class="dropdown-item" href="../cerrarsesion.php">Cerrar sesion</a></li>
           </ul>
          </div>
       <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -61,9 +61,7 @@
         <div class="container mt-4" id="container">
 
         <div class="d-flex justify-content-end mb-2" id="botones" >
-        <button type="hidden" class="btn btn-secondary"  onclick="editarFila()">Editar</button>
-            <a type="hidden" class="btn btn-primary" href="agregar.html">Agregar</a>
-            <button type="hidden" class="btn btn-danger">Eliminar</button>
+        <button type="hidden" class="btn btn-outline-secondary"  onclick="editarFila()">Editar</button>
         </div>
                     <br> 
                      <table class="table" id="myTable">
@@ -78,6 +76,8 @@
                       <th>Direccion</th>
                       <th>Cargo</th>
                       <th>Codigo contrato</th>
+                      <th>email</th>
+                      <th>Contraseña</th>
                       <th class="hidden">Editar</th>
                       <th>Eliminar</th>
                   </tr>
@@ -95,6 +95,8 @@
                       echo "<td>" . $fila['direccion'] . "</td>";
                       echo "<td>" . $fila['tipo_Cargo'] . "</td>";
                       echo "<td>" . $fila['fkcod_contrato'] . "</td>";
+                      echo "<td>" . $fila['email'] . "</td>";
+                      echo "<td>" . $fila['contraseña'] . "</td>";
                       echo "<td><a class='btn btn-secondary' href='editar.php?IdEmpleado=" . $fila['IdEmpleado'] . "'>Editar</a></td>";
                       echo "<td><a class='btn btn-danger' href='eliminar.php?IdEmpleado=" . $fila['IdEmpleado'] . "' onclick='return confirmar()'>Eliminar</a></td>";
                       echo "</tr>";
@@ -102,6 +104,15 @@
                   ?>
               </tbody>
           </table>
+
+          <button onclick="goBack()"  class="btn btn-secondary btn-md" >Volver</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

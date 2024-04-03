@@ -16,19 +16,19 @@
     <div class="form-information-childs">
         <br>
     <h2>Iniciar sesión</h2>       
-    <form class="form" id="login-form">
+    <form class="form" action="validar.php" id="login-form" method="post">
     <label>
     <i class='bx bx-envelope' ></i>
-    <input type="email" id="login-email" placeholder="Usuario">
+    <input type="email" id="login-email" placeholder="Usuario" name="email">
     </label>
     <label>
     <i class='bx bx-lock' ></i>
-    <input type="password" id="login-password" placeholder="Contraseña">
+    <input type="password" id="login-password" placeholder="Contraseña" name="contraseña">
     </label>
     <div class="recordar">
         <a href="recuperacion/recuperar.html"> ¿Olvido su Contraseña? </a> 
     </div>
-    <button type="button" class="btn btn-dark" onclick="logear()" id="Btningresar">INGRESAR</button>
+    <input type="submit" class="btn btn-dark" id="Btningresar" value="Ingresar">
 
     <p class="login-warnings" id="login-warnings"></p>
 
